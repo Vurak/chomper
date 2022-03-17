@@ -1,5 +1,5 @@
 {
-  "name": "chomper",
+	"name": "chomper",
 	"displayName": "Chomper",
 	"description": "Code Chomper",
 	"version": "0.0.1",
@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:chomper.helloWorld"
+		"onCommand:chomper.helloWorld"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -18,8 +18,20 @@
 			{
 				"command": "chomper.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "chomper.chompLine",
+				"title": "Chomp Line"
 			}
-		]
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "chomper.chompLine",
+					"group": "YourGroup@1"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
